@@ -15,28 +15,28 @@ def browser():
     driver.quit()
 
 
-def est_verify_disclaimer(browser):
+def test_verify_disclaimer(browser):
     contact_page = Recalls01Page(browser)
     contact_page.open()
     print("TC01 - Verifying the disclaimer text")
-    assert config.TestData.disclaimerexpectedtext == Recalls01Page.get_disclaimer(browser).text
+    assert config.TestData.disclaimerexpectedtext == Recalls01Page.get_disclaimer(browser).text, "Not valid disclaimer text"
     print("Disclaimer text is accurate")
 
 
-def est_disclaimer_how_it_works(browser):
+def test_disclaimer_how_it_works(browser):
     print("TC02 - Clicking on disclaimer")
     try:
         Recalls01Page.get_disclaimer_how_it_works.click()
         print("Disclaimer link is working fine")
     except WebDriverException:
-        print ("Element is not clickable")
+        print("Element is not clickable")
 
 
-def est_verify_footer_body(browser):
+def test_verify_footer_body(browser):
     contact_page = Recalls01Page(browser)
     contact_page.open()
     print("TC03 - Verifying the footer body text")
-    assert config.TestData.footerexpectedbody == Recalls01Page.get_footer_body(browser).text
+    assert config.TestData.footerexpectedbody == Recalls01Page.get_footer_body(browser).text, "Not valid footer body text"
     print("Footer body text is accurate")
 
 
@@ -44,7 +44,7 @@ def test_verify_footer_copyright(browser):
     contact_page = Recalls01Page(browser)
     contact_page.open()
     print("TC04 - Verifying the footer copyright text")
-    assert config.TestData.footerexpectedcopyright == Recalls01Page.get_footer_copyright(browser).text
+    assert config.TestData.footerexpectedcopyright == Recalls01Page.get_footer_copyright(browser).text, "Not valid footer copyright text"
     print("Footer copyright text is accurate")
 
 
@@ -75,7 +75,7 @@ def test_social_twitter(browser):
 def test_social_email(browser):
     contact_page = Recalls01Page(browser)
     contact_page.open()
-    print("TC07 - Click on Email social link")
+    print("TC07 - Test Email social link")
     try:
         Recalls01Page.click_social_email(browser)
         sleep(5)
@@ -83,13 +83,16 @@ def test_social_email(browser):
     except WebDriverException:
         print("Element is not clickable")
 
+    assert config.TestData.socialmailto == Recalls01Page.get_social_email_to(browser), "Blank or Invalid Email To"
+
+
 def test_find_my_match(browser):
     contact_page = Recalls01Page(browser)
     contact_page.open()
     print("TC08 - Find my match box")
-    Recalls01Page.set_find_my_match(browser,'34744')
+    Recalls01Page.set_find_my_match(browser, '34744')
 
-    assert Recalls01Page.get_find_my_match(browser)
+    assert Recalls01Page.get_find_my_match(browser), "Find my match textbox is blank"
     try:
         Recalls01Page.click_find_my_match_button(browser)
         sleep(5)

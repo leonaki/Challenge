@@ -28,19 +28,24 @@ class Recalls01Page(BasePage):
         return self.find_element_by_xpath('/html/body/main/div[3]/article/div[2]/a[1]/svg/g/path[2]')
 
     def click_social_facebook(self):
-        self.find_element_by_css_selector('#wrpr > div.h-sect.h-cont.h-col.h-col--invert > article > div:nth-child(6) > a:nth-child(1) > svg').click()
+        self.find_element_by_css_selector('#wrpr > div.h-sect.h-cont.h-col.h-col--invert > article > div:nth-child(6) > '
+                                          'a:nth-child(1) > svg > g > path.ca-icon__colored-fill').click()
 
     def get_social_twitter(self):
         return self.find_element_by_xpath('/html/body/main/div[3]/article/div[2]/a[1]/svg/g/path[2]')
 
     def click_social_twitter(self):
-        self.find_element_by_css_selector('#wrpr > div.h-sect.h-cont.h-col.h-col--invert > article > div:nth-child(6) > a:nth-child(2) > svg > g > path.ca-icon__colored-fill-2').click()
+        self.find_element_by_css_selector('#wrpr > div.h-sect.h-cont.h-col.h-col--invert > article > div:nth-child(6) >'
+                                          ' a:nth-child(2) > svg > g > path.ca-icon__colored-fill-2').click()
 
     def get_social_email(self):
-        return self.find_element_by_xpath('/html/body/main/div[3]/article/div[2]/a[1]/svg/g/path[2]')
+        return self.find_element_by_css_selector('#wrpr > div.h-sect.h-cont.h-col.h-col--invert > article > div:nth-child(6) > a:nth-child(3)')
+
+    def get_social_email_to(self):
+        return self.find_element_by_css_selector('#wrpr > div.h-sect.h-cont.h-col.h-col--invert > article > div:nth-child(6) > a:nth-child(3)').get_attribute("href").partition("subject")[0][7:]
 
     def click_social_email(self):
-        self.find_element_by_css_selector('#wrpr > div.h-sect.h-cont.h-col.h-col--invert > article > div:nth-child(6) > a:nth-child(3) > svg').click()
+        self.find_element_by_css_selector('#wrpr > div.h-sect.h-cont.h-col.h-col--invert > article > div:nth-child(6) > a:nth-child(3)').click()
 
     def set_find_my_match(self, message):
         self.find_element_by_xpath('/html/body/main/div[3]/article/div[5]/div/form/div[2]/div/div/input').send_keys(message)
@@ -63,14 +68,15 @@ class Recalls01Page(BasePage):
         return self.find_element_by_xpath('/html/body/main/div[3]/aside/nav[1]/h3')
 
     def click_latest_news_first(self):
-        self.find_element_by_xpath('//*[@id="sidebar"]/nav[2]/a[1]/div[2]').click()
+        self.find_element_by_xpath('//*[@id="sidebar"]/nav[2]/a[1]/div[1]').click()
 
     def click_latest_news_last(self):
-        self.find_element_by_xpath('//*[@id="sidebar"]/nav[2]/a[last()]/div[2]').click()
+        self.find_element_by_xpath('//*[@id="sidebar"]/nav[2]/a[last()]/div[1]').click()
 
     def click_related_new_stories_first(self):
-        self.find_element_by_xpath('//*[@id="sidebar"]/nav[1]/a[1]/div[2]').click()
+        self.find_element_by_xpath('//*[@id="sidebar"]/nav[1]/a[1]/div[1]').click()
 
     def click_related_new_stories_last(self):
-        self.find_element_by_xpath('//*[@id="sidebar"]/nav[1]/a[last()]/div[2]').click()
+        self.find_element_by_xpath('//*[@id="sidebar"]/nav[1]/a[last()]/div[1]').click()
+
 
