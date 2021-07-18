@@ -1,0 +1,103 @@
+C:\Users\Leon\PycharmProjects\ConsumerAffairsChallenge\Tests>pytest --tb=no -s
+================================================= test session starts =================================================
+platform win32 -- Python 3.9.6, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+rootdir: C:\Users\Leon\PycharmProjects\ConsumerAffairsChallenge\Tests
+collected 17 items
+
+test_recalls01.py
+-----------
+
+
+TC01 - Verifying the disclaimer text
+     Disclaimer text is accurate
+.
+-----------
+
+TC02 - Clicking on disclaimer
+     Disclaimer link is working fine
+.
+-----------
+
+TC03 - Footer Contact Us
+     03.1 - Footer Contact us link is accurate
+     03.2 - Footer Contact us link is working fine
+.
+-----------
+
+TC04 - Footer Faq Us
+     04.1 - Footer Faq link is accurate
+     04.2 - Footer Faq link is working fine
+.
+-----------
+
+TC05 - Footer Terms of Use
+     05.1 - Footer Terms of Use link is accurate
+     05.2 - Footer Terms of Use link is working fine
+.
+-----------
+
+TC06 - Footer Privacy Policy
+     06.1 - Footer Privacy Policy link is accurate
+     06.2 - Footer Privacy Policy link is working fine
+.
+-----------
+
+TC07 - Footer CA Privacy Notice
+     07.1 - CA Privacy Notice link is accurate
+     07.2 - Footer CA Privacy Notice link is working fine
+.
+-----------
+
+TC08 - Verifying the footer body text
+     Footer body text is accurate
+.
+-----------
+
+TC09 - Verifying the footer copyright text
+     Footer copyright text is accurate
+.
+-----------
+
+TC10 - Click on Facebook social link
+     Facebook link is working fine
+.
+-----------
+
+TC11 - Click on Twitter social link
+     Twitter Social link is working fine
+.
+-----------
+
+TC12 - Test Email social link
+     Email link is working fine
+.
+-----------
+
+TC13 - Find my match box
+     Find my match button is working fine
+.
+-----------
+
+TC14 - Click on First Latest News
+     First listed Latest News exists
+.
+-----------
+
+TC15 - Click on Last Latest News
+     Last listed Latest News exists
+.
+-----------
+
+TC16 - Click on First Related News
+     Element not found
+F
+-----------
+
+TC17 - Click on Last Related News
+     Element not found
+F
+
+=============================================== short test summary info ===============================================
+FAILED test_recalls01.py::test_related_news_first - Failed: Element not found
+FAILED test_recalls01.py::test_related_news_last - Failed: Element not found
+====================================== 2 failed, 15 passed in 140.22s (0:02:20) =======================================

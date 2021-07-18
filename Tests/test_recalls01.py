@@ -22,9 +22,6 @@ def browser():
     driver.quit()
 
 
-
-
-
 def test_verify_disclaimer(browser):
     contact_page = Recalls01Page(browser)
     contact_page.open()
